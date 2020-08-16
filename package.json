@@ -1,0 +1,53 @@
+{
+  "name": "javascript-server",
+  "version": "0.1.0",
+  "description": "training purpose",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "extra": "npx babel-node extra",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc-watch --project . --onSuccess \"npm run nodemon\"",
+    "precompile": "rm -r ./dist",
+    "nodemon": "nodemon ./dist/src/index.js",
+    "precommit": "git add .",
+    "commit": "npx git-cz",
+    "prelint": "npm run fixlint",
+    "lint": "./node_modules/tslint/bin/tslint -c tslint.json -p tsconfig.json --exclude 'node_modules/**/*.{j,t}s'",
+    "postlint": "git add .",
+    "fixlint": "./node_modules/tslint/bin/tslint --fix -c tslint.json -p tsconfig.json --exclude 'node_modules/**/*.{j,t}s'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayankb96/javascript-server.git"
+  },
+  "keywords": [
+    "training"
+  ],
+  "author": "Mayank",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayankb96/javascript-server/issues"
+  },
+  "homepage": "https://github.com/mayankb96/javascript-server#readme",
+  "dependencies": {
+    "@types/mongoose": "^5.3.27",
+    "@types/node": "^11.13.7",
+    "body-parser": "^1.18.3",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "lint": "^1.1.2",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.5.5",
+    "tslint": "^5.16.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "husky": "^1.3.1",
+    "tsc-watch": "^2.1.2",
+    "typescript": "^3.4.5"
+  }
+}
